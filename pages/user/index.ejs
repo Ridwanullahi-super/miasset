@@ -27,7 +27,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Custom styles for this template-->
-  <link href="/css/sb-admin-2.css" rel="stylesheet
+  <link href="/css/sb-admin-2.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/spinner.css">
 </head>
 
@@ -392,8 +392,15 @@
               </div>
             </div>
           </div>
-          </div>
-          </div>
+        </div>
+      </div>
+      <script>
+        $(document).ready(function () {
+            $('#flash-message').show();
+            $('#flash-message').delay(5000).fadeOut();
+        });
+    </script>
+      <%- include("../patials/footer.ejs") %>
           <script>
             const ctx = document.getElementById('myAreaChart');
           
@@ -449,4 +456,4 @@
 
           <!-- Content Row -->
           <div class="row">
-            <%- include("../patials/footer.ejs") %>
+            
