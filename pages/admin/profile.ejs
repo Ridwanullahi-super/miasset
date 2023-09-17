@@ -183,7 +183,13 @@
     
           <!-- Sidebar Message -->
           <div class="sidebar-card d-none d-lg-flex">
-            <img class="sidebar-card-illustration mb-2" src="<%= admin.photo %>" alt="..." />
+            <% if (admin.photo) { %>
+              <img class="sidebar-card-illustration mb-2" src="<%= admin.photo %>" alt="..." />
+             
+            <% }else{ %>
+              <img class="sidebar-card-illustration mb-2" src="/img/profile.jpg" alt="..." />
+
+              <% } %>
             <p class="text-center mb-2">
               <strong title="my profile"> <a href="/admin/profile"><%- include("../patials/adminName")  %></a></strong> welcome to Mi assets,
              
@@ -307,7 +313,16 @@
                                 <div class="col-md-6 col-lg-7"></div>
                                 <div class=" text-center" >
                                   <div class="profile-pic-div">
-                                    <img src="<%= admin.photo %>" id="photo" >
+
+
+
+                                    <% if (admin.photo) { %>
+                                     
+                                      <img src="<%= admin.photo %>" id="photo" >
+                                    <% }else{ %>
+                                      <img src="/img/profile.jpg" id="photo" >
+
+                                      <% } %>
                                     <input type="file" id="file" name="photo">
                                     <label for="file" id="uploadBtn">Choose Photo</label>
                                   </div>                                  

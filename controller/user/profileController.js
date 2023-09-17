@@ -17,8 +17,8 @@ const updateProfile = (async(req, res)=>
          let id = req?.params?.id
         let user = await User.findId(id)
         let {surname,first_name, other_name,phone_number, address, email, photo,country, state} = req.body
-        console.log(req.body);
-        console.log(req.files);
+        // console.log(req.body);
+        // console.log(req.files);
         const  photos = req.files.photo
         console.log(photos);
         if (photos) {
@@ -39,7 +39,7 @@ const updateProfile = (async(req, res)=>
             photos.mv(resolve('uploads/user/' + fileName), (err) => {
                 if (!err) {
                     user.photo = '/user/' + fileName
-                    console.log(user);
+                    // console.log(user);
                    user.updateWithOutPassword()
                   req.flash('Sucess', "picture upload successfullly");
 
@@ -65,11 +65,11 @@ let user = await User.findId(id)
 // let {current_password, password} = req.body;/
 let  current_password = req.body.current_password;
    let correct = await User.checkPass(id, current_password)
-   console.log(correct);
+//    console.log(correct);
 
    if(correct){
   let user =  user.setObjProp(req.body) 
-console.log(user);
+// console.log(user);
      
       await user.update()
        req.flash("success", "password successfully change!")

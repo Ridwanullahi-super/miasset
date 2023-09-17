@@ -14,10 +14,10 @@ const updateProfile = (async(req, res)=>
          let id = req?.params?.id
         let admin = await Admin.findId(id)
         let {surname,first_name, other_name,phone_number, address, email, photo, paystack_secret_key, country, state} = req.body
-        console.log(req.body);
-        console.log(req.files)
+        // console.log(req.body);
+        // console.log(req.files)
         const  photos = req.files.photo
-        console.log(photos);
+        // console.log(photos);
         if (photos) {
             if (!photos.mimetype.startsWith('image/')) {
                 req.flash('Error', "only image file is allowed");
@@ -36,7 +36,7 @@ const updateProfile = (async(req, res)=>
             photos.mv(resolve('uploads/admin/' + fileName), (err) => {
                 if (!err) {
                     admin.photo = '/admin/' + fileName
-                    console.log(admin);
+                    // console.log(admin);
                    admin.updateWithOutPassword()
                   req.flash('Sucess', "picture upload successfullly");
 
@@ -61,11 +61,11 @@ let admin = await Admin.findId(id)
 // let {current_password, password} = req.body;/
 let  current_password = req.body.current_password;
    let correct = await Admin.checkPass(id, current_password)
-   console.log(correct);
+//    console.log(correct);
 
    if(correct){
   let admin =  admin.setObjProp(req.body) 
-console.log(admin);
+// console.log(admin);
      
       await admin.update()
        req.flash("success", "password successfully change!")
