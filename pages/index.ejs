@@ -11,10 +11,11 @@
 
   <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/img/logo.jpg">
+    <link rel="stylesheet" href="/css/spinner.css">
 
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
 
   <!-- Vendor CSS Files -->
   <link href="/vendor/aos/aos.css" rel="stylesheet">
@@ -32,7 +33,11 @@
 </head>
 
 <body>
-
+  <div class="preloader is-active">
+    <div class="preloader__wrap">
+      <div class="spinner-grow text-danger" style="background-color: purple;"></div>
+    </div>
+  </div>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top" style="background-color: purple; ">
     <div class="container d-flex align-items-center justify-content-between">
@@ -792,11 +797,10 @@
   <script src="/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="/js/main.js"></script>
-
+<%- include('./patials/footer.ejs') %>
 </body>
 
 </html>
